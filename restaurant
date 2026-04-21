@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Masala & Co. | Authentic Indian Cuisine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;background:#fffdf8;color:#2c2c2c}
+    nav{background:rgba(20,10,5,0.95);padding:18px 60px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
+    nav .logo{color:#f4a261;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;letter-spacing:1px}
+    nav ul{list-style:none;display:flex;gap:30px}
+    nav ul li a{color:#ddd;text-decoration:none;font-size:13px;letter-spacing:1px;transition:color 0.3s}
+    nav ul li a:hover{color:#f4a261}
+    .hero{background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600') center/cover;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:78px;line-height:1.1;margin-bottom:20px}
+    .hero h1 span{color:#f4a261}
+    .hero p{font-size:17px;font-weight:300;max-width:480px;margin:0 auto 36px;color:#ddd;line-height:1.8}
+    .btn{background:#f4a261;color:#fff;padding:14px 38px;border:none;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.3s;letter-spacing:1px}
+    .btn:hover{background:#e76f51;transform:translateY(-2px)}
+    .divider{text-align:center;font-size:28px;padding:18px 0;color:#f4a261}
+    .menu{padding:90px 80px;text-align:center;background:#fffdf8}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:50px;font-weight:700;margin-bottom:10px}
+    .section-sub{color:#999;font-size:14px;margin-bottom:50px;letter-spacing:1px}
+    .menu-tabs{display:flex;justify-content:center;gap:16px;margin-bottom:40px;flex-wrap:wrap}
+    .tab{padding:10px 26px;border:1px solid #f4a261;border-radius:40px;cursor:pointer;font-size:13px;color:#f4a261;transition:all 0.3s;background:transparent}
+    .tab:hover,.tab.active{background:#f4a261;color:#fff}
+    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .menu-item{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.07);transition:transform 0.3s}
+    .menu-item:hover{transform:translateY(-6px)}
+    .menu-item img{width:100%;height:200px;object-fit:cover}
+    .menu-item .info{padding:20px}
+    .menu-item h3{font-size:16px;font-weight:600;margin-bottom:6px}
+    .menu-item p{font-size:12px;color:#999;margin-bottom:12px;line-height:1.6}
+    .menu-item .meta{display:flex;justify-content:space-between;align-items:center}
+    .menu-item .price{font-size:18px;font-weight:700;color:#f4a261}
+    .menu-item .tag{background:#fff3e6;color:#f4a261;font-size:10px;padding:4px 10px;border-radius:20px}
+    .about{padding:90px 80px;display:flex;align-items:center;gap:70px;background:#2c1810;color:#fff}
+    .about img{width:45%;border-radius:16px;height:450px;object-fit:cover}
+    .about .text h2{font-family:'Cormorant Garamond',serif;font-size:46px;margin-bottom:20px;color:#f4a261}
+    .about .text p{font-size:15px;color:#ccc;line-height:1.9;margin-bottom:20px}
+    .reservation{padding:90px 80px;text-align:center;background:#fffdf8}
+    .reservation form{max-width:600px;margin:40px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .reservation form input,.reservation form select{padding:14px 18px;border:1px solid #e6d8cc;border-radius:8px;font-size:14px;font-family:'Poppins',sans-serif;outline:none;background:#fff;transition:border 0.3s}
+    .reservation form input:focus,.reservation form select:focus{border-color:#f4a261}
+    .reservation form .full{grid-column:1/-1}
+    footer{background:#140a05;color:#666;text-align:center;padding:28px;font-size:13px}
+    footer span{color:#f4a261}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">🍛 Masala & Co.</div>
+    <ul>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#reservation">Reserve</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1>A Feast For<br/>The <span>Senses</span></h1>
+      <p>Experience the bold, rich, and aromatic flavours of authentic Indian cuisine crafted with love.</p>
+      <a href="#reservation" class="btn">Reserve a Table</a>
+    </div>
+  </section>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <section class="menu" id="menu">
+    <h2 class="section-title">Our Menu</h2>
+    <p class="section-sub">Fresh ingredients. Bold flavors. Every single day.</p>
+    <div class="menu-tabs">
+      <span class="tab active">Starters</span>
+      <span class="tab">Main Course</span>
+      <span class="tab">Breads</span>
+      <span class="tab">Desserts</span>
+      <span class="tab">Beverages</span>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600" alt=""/><div class="info"><h3>Paneer Tikka</h3><p>Marinated cottage cheese grilled in tandoor with spices</p><div class="meta"><div class="price">₹249</div><span class="tag">🌱 Veg</span></div></div></div>
+      <div class="menu-item"><img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600" alt=""/><div class="info"><h3>Butter Chicken</h3><p>Tender chicken in creamy tomato-butter gravy</p><div class="meta"><div class="price">₹349</div><span class="tag">🍗 Non-Veg</span></div></div></div>
+      <div class="menu-item"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600" alt=""/><div class="info"><h3>Dal Makhani</h3><p>Slow-cooked black lentils in buttery tomato base</p><div class="meta"><div class="price">₹199</div><span class="tag">🌱 Veg</span></div></div></div>
+      <div class="menu-item"><img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600" alt=""/><div class="info"><h3>Biryani</h3><p>Fragrant basmati rice layered with spiced meat & saffron</p><div class="meta"><div class="price">₹399</div><span class="tag">🍗 Non-Veg</span></div></div></div>
+      <div class="menu-item"><img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=600" alt=""/><div class="info"><h3>Gulab Jamun</h3><p>Soft milk-solid dumplings soaked in rose sugar syrup</p><div class="meta"><div class="price">₹129</div><span class="tag">🍮 Dessert</span></div></div></div>
+      <div class="menu-item"><img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600" alt=""/><div class="info"><h3>Mango Lassi</h3><p>Chilled yogurt drink blended with Alphonso mango pulp</p><div class="meta"><div class="price">₹99</div><span class="tag">🥤 Drink</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800" alt="restaurant interior"/>
+    <div class="text">
+      <h2>Our Story</h2>
+      <p>Founded in 2010, Masala & Co. was born from a grandmother's kitchen in Jaipur. We believe food is not just nourishment — it is memory, culture, and love served on a plate.</p>
+      <p>Every dish is crafted using handpicked spices sourced directly from local farms, slow-cooked with recipes passed down through three generations.</p>
+      <a href="#reservation" class="btn">Dine With Us</a>
+    </div>
+  </section>
+
+  <section class="reservation" id="reservation">
+    <h2 class="section-title">Reserve a Table</h2>
+    <p class="section-sub">Book your dining experience in 30 seconds</p>
+    <form>
+      <input type="text" placeholder="Your Name"/>
+      <input type="tel" placeholder="Phone Number"/>
+      <input type="date"/>
+      <input type="time"/>
+      <select class="full"><option>Number of Guests</option><option>1-2 Guests</option><option>3-4 Guests</option><option>5-6 Guests</option><option>7+ Guests (Private Dining)</option></select>
+      <button type="submit" class="btn full">Confirm Reservation</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 <span>Masala & Co.</span> · Made with 🍛 and ❤️ · All Rights Reserved</p>
+  </footer>
+</body>
+</html>
