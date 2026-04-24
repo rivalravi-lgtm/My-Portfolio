@@ -9,14 +9,11 @@
     *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
     body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:#fff}
 
-    /* NAV */
     nav{position:fixed;top:0;width:100%;background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;z-index:999;border-bottom:1px solid #1a1a1a}
     nav .logo{font-size:22px;font-weight:800;color:#6c63ff}
-    nav .logo span{color:#fff}
     nav a{color:#aaa;text-decoration:none;font-size:14px;margin-left:28px;transition:color 0.3s}
     nav a:hover{color:#6c63ff}
 
-    /* HERO */
     .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 20px 60px;background:radial-gradient(ellipse at top,#1a1040 0%,#0a0a0a 70%)}
     .hero .badge{background:#6c63ff22;border:1px solid #6c63ff55;color:#6c63ff;font-size:12px;padding:6px 18px;border-radius:40px;margin-bottom:24px;display:inline-block}
     .hero h1{font-size:clamp(36px,6vw,72px);font-weight:800;line-height:1.1;margin-bottom:20px}
@@ -31,14 +28,12 @@
     .stat h3{font-size:32px;font-weight:800;color:#6c63ff}
     .stat p{font-size:12px;color:#666;margin-top:4px}
 
-    /* SECTION */
     section{padding:80px 40px}
     .section-title{text-align:center;margin-bottom:60px}
     .section-title h2{font-size:36px;font-weight:800;margin-bottom:12px}
     .section-title h2 span{color:#6c63ff}
     .section-title p{color:#666;font-size:15px}
 
-    /* PORTFOLIO GRID */
     #portfolio{background:#080808}
     .grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
     .card{background:#111;border-radius:20px;padding:32px 24px;width:240px;text-align:center;border:1px solid #1e1e1e;transition:all 0.3s;text-decoration:none;color:#fff;position:relative;overflow:hidden}
@@ -51,7 +46,6 @@
     .tag{background:#6c63ff;color:#fff;font-size:11px;padding:6px 18px;border-radius:40px;font-weight:600;display:inline-block}
     .coming-soon{background:#222;color:#555;font-size:11px;padding:6px 18px;border-radius:40px;font-weight:600;display:inline-block}
 
-    /* SERVICES */
     .services-grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
     .service-card{background:#111;border:1px solid #1e1e1e;border-radius:16px;padding:32px;width:280px;transition:all 0.3s}
     .service-card:hover{border-color:#6c63ff44;transform:translateY(-4px)}
@@ -61,7 +55,6 @@
     .price{color:#6c63ff;font-weight:700;font-size:20px}
     .price span{color:#555;font-size:12px;font-weight:400}
 
-    /* CONTACT */
     #contact{background:#080808}
     .contact-wrapper{max-width:600px;margin:0 auto;text-align:center}
     .contact-wrapper p{color:#666;margin-bottom:40px;font-size:15px;line-height:1.8}
@@ -76,11 +69,9 @@
     .info-item .label{font-size:11px;color:#555;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px}
     .info-item .value{font-size:14px;color:#aaa}
 
-    /* FOOTER */
     footer{text-align:center;padding:32px;border-top:1px solid #111;color:#444;font-size:13px}
     footer span{color:#6c63ff}
 
-    /* MOBILE */
     @media(max-width:768px){
       nav{padding:16px 20px}
       nav .links{display:none}
@@ -96,7 +87,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="logo">Ravi Rajput<span>.dev</span></div>
+  <div class="logo">Ravi Rajput</div>
   <div class="links">
     <a href="#portfolio">Portfolio</a>
     <a href="#services">Services</a>
@@ -129,6 +120,8 @@
     <p>Click any card to see a live demo — ready to deliver to your clients!</p>
   </div>
   <div class="grid">
+
+    <!-- LIVE DEMOS -->
     <a class="card" href="salon.html">
       <div class="emoji">💈</div>
       <h3>Salon Website</h3>
@@ -159,6 +152,8 @@
       <p>Fresh & modern design for dental practices</p>
       <span class="tag">View Demo →</span>
     </a>
+
+    <!-- COMING SOON -->
     <div class="card">
       <div class="emoji">🏨</div>
       <h3>Hotel Website</h3>
@@ -183,6 +178,7 @@
       <p>Professional design for coaching institutes</p>
       <span class="coming-soon">Coming Soon</span>
     </div>
+
   </div>
 </section>
 
