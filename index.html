@@ -3,65 +3,254 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Web Design Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <title>Ravi | Web Design Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Poppins',sans-serif;background:#0f0f0f;color:#fff;min-height:100vh}
-    header{text-align:center;padding:80px 20px 40px}
-    header h1{font-size:48px;font-weight:700;margin-bottom:12px}
-    header h1 span{color:#6c63ff}
-    header p{font-size:16px;color:#aaa;max-width:500px;margin:0 auto}
-    .grid{display:flex;flex-wrap:wrap;gap:28px;justify-content:center;padding:40px 60px 80px}
-    .card{background:#1a1a2e;border-radius:18px;padding:36px 28px;width:260px;text-align:center;border:1px solid #2a2a4a;transition:all 0.3s;text-decoration:none;color:#fff}
-    .card:hover{border-color:#6c63ff;transform:translateY(-8px);background:#16213e}
-    .card .emoji{font-size:52px;margin-bottom:16px}
-    .card h2{font-size:20px;font-weight:700;margin-bottom:8px}
-    .card p{font-size:13px;color:#888;line-height:1.6;margin-bottom:20px}
-    .card .tag{background:#6c63ff;color:#fff;font-size:11px;padding:6px 16px;border-radius:40px;font-weight:600}
-    footer{text-align:center;padding:24px;color:#555;font-size:12px;border-top:1px solid #1a1a1a}
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:#fff}
+
+    /* NAV */
+    nav{position:fixed;top:0;width:100%;background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;z-index:999;border-bottom:1px solid #1a1a1a}
+    nav .logo{font-size:22px;font-weight:800;color:#6c63ff}
+    nav .logo span{color:#fff}
+    nav a{color:#aaa;text-decoration:none;font-size:14px;margin-left:28px;transition:color 0.3s}
+    nav a:hover{color:#6c63ff}
+
+    /* HERO */
+    .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 20px 60px;background:radial-gradient(ellipse at top,#1a1040 0%,#0a0a0a 70%)}
+    .hero .badge{background:#6c63ff22;border:1px solid #6c63ff55;color:#6c63ff;font-size:12px;padding:6px 18px;border-radius:40px;margin-bottom:24px;display:inline-block}
+    .hero h1{font-size:clamp(36px,6vw,72px);font-weight:800;line-height:1.1;margin-bottom:20px}
+    .hero h1 span{color:#6c63ff}
+    .hero p{font-size:16px;color:#888;max-width:520px;margin:0 auto 36px;line-height:1.8}
+    .btn{display:inline-block;padding:14px 36px;border-radius:50px;font-size:15px;font-weight:600;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none}
+    .btn-primary{background:#6c63ff;color:#fff;margin-right:12px}
+    .btn-primary:hover{background:#5a52e0;transform:translateY(-2px);box-shadow:0 8px 30px #6c63ff44}
+    .btn-outline{background:transparent;color:#fff;border:2px solid #333}
+    .btn-outline:hover{border-color:#6c63ff;color:#6c63ff}
+    .hero-stats{display:flex;gap:48px;margin-top:60px;justify-content:center;flex-wrap:wrap}
+    .stat h3{font-size:32px;font-weight:800;color:#6c63ff}
+    .stat p{font-size:12px;color:#666;margin-top:4px}
+
+    /* SECTION */
+    section{padding:80px 40px}
+    .section-title{text-align:center;margin-bottom:60px}
+    .section-title h2{font-size:36px;font-weight:800;margin-bottom:12px}
+    .section-title h2 span{color:#6c63ff}
+    .section-title p{color:#666;font-size:15px}
+
+    /* PORTFOLIO GRID */
+    #portfolio{background:#080808}
+    .grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
+    .card{background:#111;border-radius:20px;padding:32px 24px;width:240px;text-align:center;border:1px solid #1e1e1e;transition:all 0.3s;text-decoration:none;color:#fff;position:relative;overflow:hidden}
+    .card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#6c63ff,#a78bfa);opacity:0;transition:opacity 0.3s}
+    .card:hover::before{opacity:1}
+    .card:hover{border-color:#6c63ff44;transform:translateY(-8px);background:#161616;box-shadow:0 20px 60px #6c63ff15}
+    .card .emoji{font-size:48px;margin-bottom:16px}
+    .card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+    .card p{font-size:12px;color:#666;line-height:1.6;margin-bottom:20px}
+    .tag{background:#6c63ff;color:#fff;font-size:11px;padding:6px 18px;border-radius:40px;font-weight:600;display:inline-block}
+    .coming-soon{background:#222;color:#555;font-size:11px;padding:6px 18px;border-radius:40px;font-weight:600;display:inline-block}
+
+    /* SERVICES */
+    .services-grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
+    .service-card{background:#111;border:1px solid #1e1e1e;border-radius:16px;padding:32px;width:280px;transition:all 0.3s}
+    .service-card:hover{border-color:#6c63ff44;transform:translateY(-4px)}
+    .service-card .icon{font-size:36px;margin-bottom:16px}
+    .service-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+    .service-card p{font-size:13px;color:#666;line-height:1.7;margin-bottom:16px}
+    .price{color:#6c63ff;font-weight:700;font-size:20px}
+    .price span{color:#555;font-size:12px;font-weight:400}
+
+    /* CONTACT */
+    #contact{background:#080808}
+    .contact-wrapper{max-width:600px;margin:0 auto;text-align:center}
+    .contact-wrapper p{color:#666;margin-bottom:40px;font-size:15px;line-height:1.8}
+    .contact-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+    .contact-btn{display:flex;align-items:center;gap:10px;padding:16px 28px;border-radius:12px;text-decoration:none;font-weight:600;font-size:15px;transition:all 0.3s}
+    .whatsapp{background:#25D366;color:#fff}
+    .whatsapp:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 8px 30px #25D36644}
+    .email-btn{background:#111;color:#fff;border:1px solid #333}
+    .email-btn:hover{border-color:#6c63ff;color:#6c63ff;transform:translateY(-2px)}
+    .contact-info{display:flex;gap:32px;justify-content:center;flex-wrap:wrap}
+    .info-item{text-align:center}
+    .info-item .label{font-size:11px;color:#555;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px}
+    .info-item .value{font-size:14px;color:#aaa}
+
+    /* FOOTER */
+    footer{text-align:center;padding:32px;border-top:1px solid #111;color:#444;font-size:13px}
     footer span{color:#6c63ff}
+
+    /* MOBILE */
+    @media(max-width:768px){
+      nav{padding:16px 20px}
+      nav .links{display:none}
+      section{padding:60px 20px}
+      .hero-stats{gap:24px}
+      .card{width:100%;max-width:320px}
+      .service-card{width:100%;max-width:320px}
+      .contact-buttons{flex-direction:column;align-items:center}
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>My <span>Portfolio</span> 🚀</h1>
-    <p>Professional website demos crafted for local businesses. Click any card to preview.</p>
-  </header>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Ravi<span>.dev</span></div>
+  <div class="links">
+    <a href="#portfolio">Portfolio</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn btn-primary" style="padding:8px 20px;font-size:13px;margin-left:20px">Hire Me 🚀</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">✨ Available for Freelance Projects</div>
+  <h1>I Build Websites<br/>for <span>Local Businesses</span></h1>
+  <p>Professional, fast & mobile-friendly websites that help your business get more customers online. Starting at just ₹2,000!</p>
+  <div>
+    <a href="#portfolio" class="btn btn-primary">View My Work 🎨</a>
+    <a href="#contact" class="btn btn-outline">Hire Me 💼</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><h3>8+</h3><p>Website Templates</p></div>
+    <div class="stat"><h3>₹2K</h3><p>Starting Price</p></div>
+    <div class="stat"><h3>24hr</h3><p>Delivery Time</p></div>
+    <div class="stat"><h3>100%</h3><p>Satisfaction</p></div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-title">
+    <h2>My <span>Portfolio</span> 🎨</h2>
+    <p>Click any card to see a live demo — ready to deliver to your clients!</p>
+  </div>
   <div class="grid">
     <a class="card" href="salon.html">
       <div class="emoji">💈</div>
-      <h2>Salon Website</h2>
+      <h3>Salon Website</h3>
       <p>Elegant design for beauty & hair salons</p>
       <span class="tag">View Demo →</span>
     </a>
     <a class="card" href="gym.html">
       <div class="emoji">🏋️</div>
-      <h2>Gym Website</h2>
-      <p>Bold, energetic design for fitness centers</p>
+      <h3>Gym Website</h3>
+      <p>Bold & energetic design for fitness centers</p>
       <span class="tag">View Demo →</span>
     </a>
     <a class="card" href="restaurant.html">
       <div class="emoji">🍽️</div>
-      <h2>Restaurant Website</h2>
-      <p>Rich, appetizing design for restaurants</p>
+      <h3>Restaurant Website</h3>
+      <p>Rich & appetizing design for restaurants</p>
       <span class="tag">View Demo →</span>
     </a>
     <a class="card" href="clinic.html">
       <div class="emoji">🩺</div>
-      <h2>Clinic Website</h2>
-      <p>Clean, trusted design for medical clinics</p>
+      <h3>Clinic Website</h3>
+      <p>Clean & trusted design for medical clinics</p>
       <span class="tag">View Demo →</span>
     </a>
     <a class="card" href="dentist.html">
       <div class="emoji">🦷</div>
-      <h2>Dental Clinic</h2>
-      <p>Fresh, modern design for dental practices</p>
+      <h3>Dental Clinic</h3>
+      <p>Fresh & modern design for dental practices</p>
       <span class="tag">View Demo →</span>
     </a>
+    <div class="card">
+      <div class="emoji">🏨</div>
+      <h3>Hotel Website</h3>
+      <p>Luxury design for hotels & guest houses</p>
+      <span class="coming-soon">Coming Soon</span>
+    </div>
+    <div class="card">
+      <div class="emoji">💊</div>
+      <h3>Pharmacy Website</h3>
+      <p>Clean design for medical stores & pharmacies</p>
+      <span class="coming-soon">Coming Soon</span>
+    </div>
+    <div class="card">
+      <div class="emoji">👗</div>
+      <h3>Boutique Website</h3>
+      <p>Stylish design for clothing & fashion stores</p>
+      <span class="coming-soon">Coming Soon</span>
+    </div>
+    <div class="card">
+      <div class="emoji">📚</div>
+      <h3>Coaching Website</h3>
+      <p>Professional design for coaching institutes</p>
+      <span class="coming-soon">Coming Soon</span>
+    </div>
   </div>
-  <footer>
-    <p>© 2025 Built with ❤️ by <span>rivalravi-lgtm</span> · Web Design Services</p>
-  </footer>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-title">
+    <h2>My <span>Services</span> 💼</h2>
+    <p>Simple packages — you pick, I deliver within 24 hours!</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="icon">🥉</div>
+      <h3>Basic</h3>
+      <p>1 page professional website with your business info, contact details & mobile friendly design</p>
+      <div class="price">₹2,000 <span>/ one time</span></div>
+    </div>
+    <div class="service-card">
+      <div class="icon">🥈</div>
+      <h3>Standard</h3>
+      <p>3 pages + contact form + Google Maps + WhatsApp button + mobile friendly</p>
+      <div class="price">₹5,000 <span>/ one time</span></div>
+    </div>
+    <div class="service-card">
+      <div class="icon">🥇</div>
+      <h3>Premium</h3>
+      <p>5 pages + contact form + SEO + WhatsApp + Google Maps + monthly maintenance</p>
+      <div class="price">₹10,000 <span>/ one time</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-title">
+    <h2>Let's <span>Work Together</span> 🤝</h2>
+    <p>Ready to get your business online? Let's talk!</p>
+  </div>
+  <div class="contact-wrapper">
+    <p>I'm available for freelance projects. Whether you need a simple website or a full business package — I've got you covered. Message me right now and I'll reply within 1 hour! ⚡</p>
+    <div class="contact-buttons">
+      <a href="https://wa.me/919582822684?text=Hi%20Ravi!%20I%20saw%20your%20portfolio%20and%20I%20need%20a%20website%20for%20my%20business." target="_blank" class="contact-btn whatsapp">
+        📱 WhatsApp Me
+      </a>
+      <a href="mailto:rivalravi@gmail.com" class="contact-btn email-btn">
+        📧 Send Email
+      </a>
+    </div>
+    <div class="contact-info">
+      <div class="info-item">
+        <div class="label">Location</div>
+        <div class="value">India 🇮🇳</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Response Time</div>
+        <div class="value">Within 1 Hour ⚡</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Delivery</div>
+        <div class="value">24 Hours 🚀</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>Ravi.dev</span> · Built with ❤️ · All Rights Reserved</p>
+</footer>
+
 </body>
 </html>
